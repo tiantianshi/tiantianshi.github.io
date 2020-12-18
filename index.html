@@ -1,0 +1,28 @@
+---
+layout: default
+title: Up and Away
+---
+
+<!-- photos gallery -->
+	<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+
+        	{% for image in site.static_files %}
+        		{% if image.path contains 'images/' %}
+        	<div class="item">
+        		<div class=""> <!-- animate-box -->
+	        		<a href="{{site.baseurl }}{{ image.path }}" class="image-popup fh5co-board-img"><img src="{{site.baseurl }}{{ image.path }}"></a>
+        		</div>
+        	</div>
+    			{% endif %}
+			{% endfor %}
+
+
+        </div>
+        </div>
+       </div>
+	</div>

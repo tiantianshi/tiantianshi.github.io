@@ -1,0 +1,31 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+description: Tiantian's Site
+keywords: Tiantian, Shi
+author: Tiantian Shi
+
+left_corner: Up and Away
+
+# twitter: 
+# medium: 
+# linkedin: 
+
+defaults:
+  - scope:
+    path: "images"
+    values:
+      image: true
+
+# collections:
+#   portfolio:
+
+# # Other
+# markdown: kramdown
+
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: rouge
+#   syntax_highlighter_opts:
+#     block:
+#       line_numbers: true
