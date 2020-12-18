@@ -11,11 +11,11 @@ left_corner: Up and Away
 # medium: 
 # linkedin: 
 
-defaults:
-  - scope:
-    path: "images"
-    values:
-      image: true
+defaults: 
+  - scope: 
+      path: "images"
+      values:
+        image: true
 
 # collections:
 #   portfolio:
