@@ -1,0 +1,155 @@
+                    <img
+                    key={elements[index].id}
+                    src={elements[index].src}
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Boat on Calm Water"
+                    onClick={this.setModalImage(elements[index])}/>
+                    <img
+                    key={elements[index + 1].id}
+                    src={elements[index + 1].src}
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Boat on Calm Water"
+                    onClick={this.setModalImage(elements[index + 1])}/>
+
+class RenderPhotoModal extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.toggleModal = this.toggleModal.bind(this);
+        this.state = {
+            isModalOpen: false
+        };
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    render() {
+        const i = () => {
+            if (this.props.modalImage == null) {
+                return (<div></div>);
+            }
+            else {
+                return (
+                    <Media>
+                        <Media object className="img-fluid carousel-img" src={this.props.modalImage.src} alt={this.props.modalImage.altText}/>
+                        <Media body className="ml-5">
+                            <Media heading>{this.props.modalImage.altText}</Media>
+                            <p>this.props.modalImage.description</p>
+                        </Media>
+                    </Media>
+                );
+            }
+        }
+
+        return (
+            <Modal isOpen={this.isModalOpen} toggle={this.toggleModal}>
+                <ModalHeader className="border-0" toggle={this.toggleModal}><Logo /></ModalHeader>
+                <ModalBody>
+                    <div className="container">
+                        <div className="row">
+                        <div col="col-10 offset-1">
+                            {i}
+                        </div>
+                        </div>
+                    </div>
+                </ModalBody>
+            </Modal>
+        );
+    }
+}
+
+class PhotoCarousel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0 };
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.goToIndex = this.goToIndex.bind(this);
+    this.onExiting = this.onExiting.bind(this);
+    this.onExited = this.onExited.bind(this);
+  }
+
+  onExiting() {
+    this.animating = true;
+  }
+
+  onExited() {
+    this.animating = false;
+  }
+
+  next() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === this.props.images.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? this.props.images.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  goToIndex(newIndex) {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
+
+  render() {
+    const { activeIndex } = this.state;
+
+    const slides = this.props.images.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={item.src}
+        >
+          <img className="img-fluid w-100 h-100" src={item.src} alt={item.altText} />
+          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+
+    return (
+      <Carousel
+        activeIndex={activeIndex}
+        next={this.next}
+        previous={this.previous}
+      >
+        <CarouselIndicators items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+      </Carousel>
+    );
+  }
+}
+
+        const modalImageToRender = () => {
+            console.log("modalImageToRender: " + this.state.modalImage);
+            if (this.state.modalImage == null) {
+                return (<div></div>);
+            }
+            else {
+                return (
+                    <Media>
+                        <Media object className="img-fluid carousel-img" src={this.state.modalImage.src} alt={this.state.modalImage.altText}/>
+                        <Media body className="ml-5">
+                            <Media heading>{this.state.modalImage.altText}</Media>
+                            <p>this.state.modalImage.description</p>
+                        </Media>
+                    </Media>
+                );
+            }
+        }
+
+
+
+
+
+<ModalImageToRender image={this.state.modalImage} />
