@@ -1,0 +1,81 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.jumbotron {
+    min-height: 500px;
+}
+
+.footer{
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.jumbofont {
+    font-size: 15vw;
+    font-weight: 600;
+    font-family: 'Times New Roman', cursive;
+}
+
+.nav-font {
+    font-size: 7vw;
+    font-weight: 500;
+    font-family: 'Tahoma', cursive;
+    color: grey;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 300;
+    font-family: 'Times New Roman', cursive;
+    font-style: italic;
+}
+
+
+.btn:active,
+ btn:active,
+.btn:focus,
+ btn:focus {
+    border:none !important;
+    outline:none !important;
+}
+
+.vertical-text {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+
+ a:hover,
+.a:hover {
+    color: black;
+    background-color: #ffe6e6;
+}
+
+.menu,
+.gallery-img {
+    cursor:pointer;
+}
+
+.paragraph-text {
+    font-family: 'Tahoma', serif;
+    font-size: 1.2em;
+    color: grey;
+}
+
+
+.heading-text {
+    font-family: 'Tahoma', serif;
+    font-size: 2.5em;
+    background-color: #ffe6e6;
+}
+
+.about-row {
+    min-height: 400px;
+}
+
+.modal-img {
+    max-height: 600px;
+    max-width: 100%;
+}
+
+
