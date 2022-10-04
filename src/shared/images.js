@@ -2,9 +2,9 @@ export const IMAGES =
 [
   {
     id: 1,
-    src: "assets/images/california.jpeg",
-    altText: "California",
-    description: "Damn that's a nice boulder, but you lookin even nicer"
+    src: "assets/images/fall.jpeg",
+    altText: "Fall2",
+    description: "Test"
   },
   {
     id: 2,
