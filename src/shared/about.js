@@ -2,7 +2,7 @@ export const ABOUT = {
     experience : [
       {
         id: 1,
-        heading: "Platonic Travel Partner - EDIT",
+        heading: "Platonic Travel Partner - EDIT - EDIT2",
         dates: "Sep 2020 - Oct 2022",
         description: "You're such a great travel partner. You completely calm my anxiety and you are so good at getting me to think abou thtings that need to get planned. I can't wait for our trip to Patagonia!"
       },
